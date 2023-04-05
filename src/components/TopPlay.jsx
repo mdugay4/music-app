@@ -17,7 +17,7 @@ const TopChartCard = ({
     handlePauseClick,
     handlePlayClick,
 }) => (
-    <div className='w-full flex flex-row items-center bg-black/40 hover:bg-[#050816]/80 py-2 p-4 rounded-lg cursor-pointer mb-2'>
+    <div className='w-full flex flex-row items-center bg-[#050816]/40 hover:bg-[#050816]/80 py-2 p-4 rounded-lg cursor-pointer mb-2'>
         <h3 className='font-bold text-base text-white mr-3'>{i + 1}.</h3>
         <div className='flex-1 flex flex-row justify-between items-center'>
             <img
