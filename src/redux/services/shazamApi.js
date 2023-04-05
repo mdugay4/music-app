@@ -8,13 +8,13 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 //     },
 // };
 
-// fetch('https://shazam.p.rapidapi.com/charts/track', options)
+// fetch('https://shazam.p.rapidapi.com/charts/list', options)
 //     .then((response) => response.json())
 //     .then((response) => console.log(response))
 //     .catch((err) => console.error(err));
 
-export const shazamCoreApi = createApi({
-    reducerPath: 'shazamCoreApi',
+export const shazamApi = createApi({
+    reducerPath: 'shazamApi',
     baseQuery: fetchBaseQuery({
         baseUrl: 'https://shazam.p.rapidapi.com',
         prepareHeaders: (headers) => {
@@ -27,8 +27,9 @@ export const shazamCoreApi = createApi({
         },
     }),
     endpoints: (builder) => ({
+        getChartList: builder.query({ query: () => '/charts/list' }),
         getTopCharts: builder.query({ query: () => '/charts/track' }),
     }),
 });
 
-export const { useGetTopChartsQuery } = shazamCoreApi;
+export const { useGetChartListQuery, useGetTopChartsQuery } = shazamApi;
